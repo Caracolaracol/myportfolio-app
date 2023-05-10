@@ -1,5 +1,6 @@
-
+'use client'
 import React, { useCallback } from 'react'
+
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from 'tsparticles';
@@ -18,7 +19,7 @@ function ParticlesTS() {
     }, []);
 
     return (
-        <>
+        <div>
 
             <Particles
                 options={{
@@ -97,7 +98,7 @@ function ParticlesTS() {
                 id="tsparticles"
                 init={particlesInit}
                 loaded={particlesLoaded} />
-        </>
+        </div>
     ) 
 }
 
