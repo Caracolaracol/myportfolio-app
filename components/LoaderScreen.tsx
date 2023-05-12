@@ -8,7 +8,7 @@ import caracol from '/public/assets/images/logo2.jpg'
 const LoaderScreen = () => {
   const [done,setDone] = useState<any>(false);
 
-  useEffect(() => {
+  useEffect(() => { 
       setTimeout(()=>{
           setDone(true)
       },2000)
