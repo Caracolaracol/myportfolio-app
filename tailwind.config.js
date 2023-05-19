@@ -14,6 +14,7 @@ module.exports = {
         chrono: ['var(--font-chrono)'],
         tommylight: ['var(--font-tommyLight)'],
         tommyregular: ['var(--font-tommyRegular)'],
+        tommybold: ['var(--font-tommyBold)'],
       },
     },
     colors: {

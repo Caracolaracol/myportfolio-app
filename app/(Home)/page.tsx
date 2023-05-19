@@ -14,6 +14,7 @@ function Page() {
             setDone(true)
         },2000)
     },[done])
+    
     const language = 'EN'
     const styles = 'font-chrono text-2xl tablet:text-3xl laptop:text-4xl'
 

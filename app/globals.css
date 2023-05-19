@@ -138,49 +138,63 @@
     animation: transition_verylong 1050ms ease-in;
   }
 
+  /* ------ SECTIONS -------*/
 
+  .showComponent {
+    transition: ease;
+    animation: showComponent 850ms ease-out;
+  }
+  @keyframes showComponent {
+    from {
+      opacity: 0;
+      transform: translate(-300px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0px, 0);
+    }    
+  }
+
+  .showOpacity {
+    transition: ease;
+    animation: showOpacity 850ms ease-out;
+  }
+  .showOpacityShort {
+    transition: ease;
+    animation: showOpacity 400ms ease-out;
+  }
+  .showOpacity1 {
+    transition: ease;
+    animation: showOpacity 1000ms ease-out;
+  }
+  .showOpacity2 {
+    transition: ease;
+    animation: showOpacity 1500ms ease-out;
+  }
+  .showOpacity3 {
+    transition: ease;
+    animation: showOpacity 2000ms ease-out;
+  }
+  .showOpacity4 {
+    transition: ease;
+    animation: showOpacity 2500ms ease-out;
+  }
+
+  @keyframes showOpacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
-/* @font-face {
-    font-family: 'Tommy';
-    src: url('public/assets/fonts/MADE Tommy Soft Medium PERSONAL USE.otf') format('opentype');
-    font-style: normal;
-    font-weight: normal;
-  }
-  @font-face {
-    font-family: 'TommyLight';
-    src: url('public/assets/fonts/MADE Tommy Soft Light PERSONAL USE.otf') format('opentype');
-  
-  }
-  @font-face {
-    font-family: 'TommyRegular';
-    src: url('public/assets/fonts/MADE Tommy Soft Regular PERSONAL USE.otf') format('opentype');
-    font-style: normal;
-    font-weight: normal;
-  }
-  
-  @font-face {
-    font-family: 'ChronoType';
-    src: url('public/assets/fonts/ChronoType.ttf') format('truetype');
-    font-style: normal;
-    font-weight: bold;
-  }
-  
-  @font-face {
-    font-family: 'TommyBold';
-    src: url('public/assets/fonts/MADE TOMMY ExtraBold_PERSONAL USE.otf') format('opentype');
-    font-style: normal;
-    font-weight: bold;
-  }
- */
-  /* ------ LAYER TAILWIND ----- */
- /* 
+
+/*
 @layer components {
 
   
-    .showproject {
-      transition: ease;
-      animation: showproject 850ms ease-out;
-    }
+    
   
     .colorback {
       animation: color2 500ms ease-out;
@@ -213,18 +227,7 @@
     }
 
   
-    @keyframes showproject {
-      from {
-        opacity: 0;
-        transform: translate(-300px, 0);
-      }
-      to {
-        opacity: 1;
-        transform: translate(0px, 0);
-      }
-  
-      
-    }
+   
     @keyframes showprojectreverse {
       0% {
         display: block;

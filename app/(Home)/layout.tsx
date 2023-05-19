@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 
-import './globals.css'
+import '../globals.css'
+import Providers from '../Providers';
 
 export const metadata = {
   title: 'Caracolaracol || Creative Developer',
@@ -15,26 +16,26 @@ export const metadata = {
 }
 
 const chronoType = localFont({
-  src: '../public/fonts/ChronoType.ttf',
+  src: '../../public/fonts/ChronoType.ttf',
   display: 'swap',
   variable:'--font-chrono',
   adjustFontFallback: 'Times New Roman',
   preload:false
 });
 const tommy = localFont({
-  src: '../public/fonts/MADE Tommy Soft Medium PERSONAL USE.otf',
+  src: '../../public/fonts/MADE Tommy Soft Medium PERSONAL USE.otf',
   display: 'swap',
   variable:'--font-tommy',
   preload:false
 });
 const tommyLight = localFont({
-  src: '../public/fonts/MADE Tommy Soft Light PERSONAL USE.otf',
+  src: '../../public/fonts/MADE Tommy Soft Light PERSONAL USE.otf',
   display: 'swap',
   variable:'--font-tommyLight',
   preload:false
 });
 const tommyRegular = localFont({
-  src: '../public/fonts/MADE Tommy Soft Regular PERSONAL USE.otf',
+  src: '../../public/fonts/MADE Tommy Soft Regular PERSONAL USE.otf',
   display: 'swap',
   variable:'--font-tommyRegular',
   preload:false
@@ -45,9 +46,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${chronoType.variable} ${tommy.variable} ${tommyLight.variable} ${tommyRegular.variable} `}>
       <body>
-        <div className="flex flex-col gradient_dia dark:gradient_noche select-none h-screen justify-center">
-            {children}
-        </div>
+        <Providers>
+          <div className="flex flex-col gradient_dia dark:gradient_noche select-none h-screen justify-center">
+              {children}
+          </div>
+        </Providers>
       </body>
     </html>
   )
