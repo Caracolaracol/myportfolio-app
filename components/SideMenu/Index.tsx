@@ -9,7 +9,7 @@ import ItemList from "./ItemList";
 import { LINKLIST } from "@/constants/constants";
 import { atom, useAtom, useAtomValue } from "jotai";
 import { languageAtom, locationAtom } from "@/app/Store";
-import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 
 const showSideMenuAtom = atom(false)
 const isShowingSideMenuAtom = atom(false)

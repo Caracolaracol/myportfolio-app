@@ -59,7 +59,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
       <body>
         <Providers>
           <div className="flex flex-col gradient_dia dark:gradient_noche select-none h-screen justify-center">
-            <div key='miau' className="gradient_dia dark:text-blancon dark:gradient_noche relative min-h-screen flex flex-col justify-between" >
+            <div className="gradient_dia dark:text-blancon dark:gradient_noche relative min-h-screen flex flex-col justify-between" >
               <div>
                 <Header />
                 <div className="pb-[7rem] tablet:pb-[5rem]" >
