@@ -56,15 +56,8 @@ export default function Page() {
         <div className='flex items-center my-[25vh]'>
           <p className="text-3xl font-tommyregular tracking-wider">
             {language == "EN"
-              ? `Welcome to my portfolio, here you will find all my works as a `
-              : `Bienvenidx a mi portafolio donde verás todos mis trabajos como `}
-            <strong>
-              {language == "EN" ? "web developer" : "desarrollador web"}
-            </strong>
-            {language == "EN" ? " but also as an " : ", pero también como "}
-            <strong>
-              {language == "EN" ? "artist." : "artista."}
-            </strong>
+              ? `Welcome to my portfolio! 🐸.`
+              : `Bienvenidx a mi portafolio! 🐸. `}
             {language == "EN"
               ? ` Feel free to navigate between the sections as you like.`
               : ``}

@@ -8,14 +8,16 @@ import ItemList from "./ItemList";
 
 import { LINKLIST } from "@/constants/constants";
 import { atom, useAtom, useAtomValue } from "jotai";
-import { languageAtom, locationAtom } from "@/app/Store";
+import { hideSideMenuAnimationAtom, isShowingSideMenuAtom, languageAtom, locationAtom, showSideMenuAtom } from "@/app/Store";
 import { useParams } from "next/navigation";
+import {  getProjectsDataArray } from "@/app/(sections)/portfolio/[project]/api";
 
-const showSideMenuAtom = atom(false)
-const isShowingSideMenuAtom = atom(false)
-const hideSideMenuAnimationAtom = atom(false)
+
+
+
 
 function SideMenu(props:any) {
+    
     const wrapperRef = useRef<any>(null)
     const ulRef = useRef<any>(null)
     const [showSideMenu, setShowSideMenu] = useAtom(showSideMenuAtom)
@@ -26,12 +28,15 @@ function SideMenu(props:any) {
     const params = useParams()
     const [dataProjects, setDataProjects] = useState<any>([])
     const [blogEntries, setBlogEntries] = useState<any>([])
-    
     const itemstyle = "font-tommyregular indent-1 laptop:text-[15px] desktop:text-[17px] tracking-wide antialiased dark:text-negron laptop:dark:text-blancon dark:hover:text-naranjalink hover:text-naranjalink"
 
     // Projects State
     useEffect(() => {
-        setDataProjects(props.projects)
+        const fetchData = async ()  => {
+          const data = await getProjectsDataArray()
+          setDataProjects(data.namesArrayData)
+        }
+        fetchData()
         location == '/blog' ? setBlogEntries(props.blogEntries) : ''
     },[dataProjects, location, props.blogEntries, props.projects])
 
