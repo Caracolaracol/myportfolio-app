@@ -1,17 +1,25 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Image from 'next/image'
 
-import {  useAtomValue } from 'jotai'
-import { languageAtom } from '@/app/Store'
+import { useAtom, useAtomValue } from 'jotai'
+import { languageAtom, locationAtom } from '@/app/Store'
 
 import flor from 'public/assets/images/flor1.png'
 import ciervovolante from 'public/assets/images/ciervovolante.png'
+import { useParams, usePathname } from 'next/navigation'
 
 
 export default function Page() {
   const language = useAtomValue(languageAtom)
+  const pathname = usePathname()
+  const [location, setLocation] = useAtom(locationAtom)
+
+  useEffect(() => {
+    setLocation(pathname)
+  },[])
+
 
   
   return (
@@ -56,10 +64,10 @@ export default function Page() {
         <div className='flex items-center my-[25vh]'>
           <p className="text-3xl font-tommyregular tracking-wider">
             {language == "EN"
-              ? `Welcome to my portfolio! 🐸.`
-              : `Bienvenidx a mi portafolio! 🐸. `}
+              ? `Welcome to my portfolio!`
+              : `Bienvenidx a mi portafolio! `}
             {language == "EN"
-              ? ` Feel free to navigate between the sections as you like.`
+              ? ` Feel free to navigate between the project sections at your left.`
               : ``}
           </p>
           <Image

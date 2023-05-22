@@ -2,7 +2,7 @@ import { languageAtom } from '@/app/Store'
 import ProjectTitle from '@/components/ProjectSection/ProjectTitle'
 
 import { useAtomValue } from 'jotai'
-import { getData, pageControl } from './api'
+import { getData, pageControl } from '../../../api'
 
 
 export default async function Page({params}:any) {

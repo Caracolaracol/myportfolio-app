@@ -1,5 +1,7 @@
 import projects from '@/db/projects.json'
-export async function getData(params:{project:string}) {
+import posts from '@/db/posts.json'
+
+export async function getData(params:any) {
     const {websites, codingProjects, videos, arts} = projects
     const allProjectsDataArray: any = [...websites, ...codingProjects, ...videos, ...arts]
     const projectFound = await allProjectsDataArray.find((el: any) => el.id === params.project)
@@ -15,9 +17,9 @@ export async function getProjectsDataArray() {
     const {websites, codingProjects, videos, arts} = projects
     const allProjectsDataArray: any =  [...websites, ...codingProjects, ...videos, ...arts]
     const namesArrayData:any = []
-    allProjectsDataArray.array.forEach((element: any) => {
-        let {id, name} = element
-        let newObject = {id, name}
+    allProjectsDataArray.forEach((element: any) => {
+        let {id, name, projectType} = element
+        let newObject = {id, name, projectType}
         namesArrayData.push(newObject)
     });
     return {namesArrayData}
@@ -44,3 +46,8 @@ export async function getProjectsDataArray() {
   
       return { idPreviousProject, idNextProject }
   }
+
+export const getProjects = async () => {
+    const { Posts } = posts
+    return Posts
+}

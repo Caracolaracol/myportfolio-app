@@ -138,7 +138,7 @@ function NavBarMobile() {
                                 <p className='font-tommyregular text-lg antialiased text-center tracking-wider'>{darkMode == true ? 'Modo Día' : 'Modo Noche'}</p>
                             </div>
                             <Image src={maripn} alt='luciernaga' className={`w-8 h-auto ${darkMode == true ? 'hidden' : ''} cursor-pointer -rotate-[35deg] -translate-y-1`} />
-                            <Image src={marip} alt='abeja' className={`w-8 h-auto ${darkMode == false ? 'hidden' : ''} cursor-pointer`} />
+                            {/* <Image src={marip} alt='abeja' className={`w-8 h-auto ${darkMode == false ? 'hidden' : ''} cursor-pointer`} /> */}
 
                         </div>
                         
@@ -146,10 +146,10 @@ function NavBarMobile() {
                 <MenuItem>
                 <div /* onClick={languageHandler} */ className='flex w-full flex-row items-center cursor-pointer justify-start gap-2'>
                             <div className=''>
-                                <p className='flex font-tommyregular text-lg antialiased text-center hover:cursor-pointer hover:text-naranjad  active:bg-violetadl transition-colors active:bg-opacity-70 tracking-wider' >{language == 'ES' ? 'English' : 'Español'}</p>
+                                {/* <p className='flex font-tommyregular text-lg antialiased text-center hover:cursor-pointer hover:text-naranjad  active:bg-violetadl transition-colors active:bg-opacity-70 tracking-wider' >{language == 'ES' ? 'English' : 'Español'}</p> */}
 
                             </div>
-                            <Image src={cast} alt='castnia moth' className={`w-8 h-auto ${language == 'ES' ? 'hidden' : ''} cursor-pointer`} />
+                            {/* <Image src={cast} alt='castnia moth' className={`w-8 h-auto ${language == 'ES' ? 'hidden' : ''} cursor-pointer`} /> */}
                             <Image src={actia} alt='actias luna' className={`w-8 h-auto ${language == 'EN' ? 'hidden' : ''} cursor-pointer mt-2`} />
                         </div>
                 </MenuItem>

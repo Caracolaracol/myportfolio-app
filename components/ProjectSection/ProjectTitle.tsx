@@ -22,7 +22,7 @@ function ProjectTitle({name, nameES, idPreviousProject, idNextProject}:any) {
         setLocation('/portfolio')
         idNextProject == null ? setAtEnd(true) : setAtEnd(false)
         idPreviousProject == null ? setAtStart(true) : setAtStart(false)
-    },[idPreviousProject, idNextProject, location])
+    },[idPreviousProject, idNextProject, location,setLocation])
 
     const handlerSide = () => {
         if (isShowingSideMenu == false){
