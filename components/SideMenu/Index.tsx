@@ -48,11 +48,12 @@ function SideMenu() {
         <aside
             ref={wrapperRef}
             className={`${showSideMenu ? "!block showsidemenu" : ""} ${hideSideMenuAnimation ? "hidesidemenu" : ""
-                } hidden laptop:showsidemenu rounded-r-lg  overflow-y-scroll hide_scrollbar laptop:block  w-[18rem] h-[70vh] laptop:h-[44rem] laptop:w-[25vw] desktop:w-[20rem] fixed top-[10rem] tablet:top-[12rem] laptop:top-[6.9rem] desktop:top-[6.9rem] left-0 z-30 dark:bg-blancomenu bg-blancod laptop:bg-opacity-40 bg-opacity-100 shadow-xl laptop:shadow-none laptop:dark:bg-negron laptop:dark:bg-opacity-70 `}
+                } hidden laptop:showsidemenu rounded-r-lg  overflow-y-scroll hide_scrollbar laptop:block  w-[18rem] h-fit max-h-[80vh] laptop:h-fit laptop:max-h-[70vh] laptop:w-[25vw] desktop:w-[20rem] fixed top-[10rem] tablet:top-[12rem] laptop:top-[6.9rem] desktop:top-[12rem] left-0 z-30 dark:bg-blancomenu bg-blancod laptop:bg-opacity-40 bg-opacity-100 shadow-xl laptop:shadow-none laptop:dark:bg-negron laptop:dark:bg-opacity-70 `}
         >
-            <div className="pl-4 pb-4 rounded-tr-sm rounded-br-sm max-h-[100%] overflow-y-scroll hide_scrollbar">
-                <div ref={ulRef} className="flex flex-row">
+            <div className="pl-4 mb-4 rounded-tr-sm rounded-br-sm overflow-y-scroll hide_scrollbar">
+                <div ref={ulRef} className="flex group">
                     <MenuList />
+                    <p className="hidden self-end text-fucsiadark opacity-90 group-hover:animate-bounce">▼</p>
                 </div>
             </div>
         </aside>

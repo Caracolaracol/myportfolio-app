@@ -26,6 +26,7 @@ function MenuList() {
           setBlogEntries(data)
         }
         fetchProjectNames()
+        fetchBlogEntries()
 
         console.log(pathname, params)
     },[getProjectsDataArray,getProjects,setDataProjects,setBlogEntries, setIsOutside])
@@ -120,7 +121,7 @@ function MenuList() {
             )}
 
             {pathname.startsWith("/about") && (
-                <>
+                <div>
                     <Subtitle>Links</Subtitle>
                     <ul>
                         {LINKLIST.map((el) => {
@@ -137,11 +138,11 @@ function MenuList() {
                             );
                         })}
                     </ul>
-                </>
+                </div>
             )}
-{/* 
+
           {pathname.startsWith("/blog") && (
-            <>
+            <div>
               <Subtitle>Blog Entries</Subtitle>
               <ul>
                 {blogEntries &&
@@ -157,8 +158,8 @@ function MenuList() {
                     </Link>
                   ))}
               </ul>
-            </>
-          )} */}
+            </div>
+          )} 
         </>
     )
 }

@@ -1,7 +1,5 @@
-import { languageAtom } from '@/app/Store'
 import ProjectTitle from '@/components/ProjectSection/ProjectTitle'
 
-import { useAtomValue } from 'jotai'
 import { getData, pageControl } from '../../../api'
 
 

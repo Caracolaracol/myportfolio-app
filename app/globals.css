@@ -188,6 +188,38 @@
       opacity: 1;
     }
   }
+
+ /* ----- SIDE MENU ----- */
+  .showsidemenu {
+    transition: ease;
+    animation: showComponent 450ms ease-out;
+  }
+  @media only screen and (max-width: 1024px) {
+    .hidesidemenu {
+      transition: ease;
+      animation: showprojectreverse 450ms forwards ease-out;
+    }
+
+  }
+  @keyframes showprojectreverse {
+    0% {
+      display: block;
+      transform: translate(0px, 0);
+    }
+    80% {
+      display: block;
+    }
+    100% {
+      display: none;
+      transform: translate(-300px, 0);  
+    }
+  }
+
+
+  /* ---- PROJECT TITLE ---- */
+  .circleround {
+    clip-path: circle();
+  }
 }
 
 /*
@@ -209,18 +241,8 @@
     }
 
   
-    .showsidemenu {
-      transition: ease;
-      animation: showproject 450ms ease-out;
-    }
+
     
-    @media only screen and (max-width: 1024px) {
-      .hidesidemenu {
-        transition: ease;
-        animation: showprojectreverse 450ms forwards ease-out;
-      }
-  
-    } 
     @keyframes opacity {
       from {opacity: 0;}
       to {opacity: 1;}
@@ -228,19 +250,7 @@
 
   
    
-    @keyframes showprojectreverse {
-      0% {
-        display: block;
-        transform: translate(0px, 0);
-      }
-      80% {
-        display: block;
-      }
-      100% {
-        display: none;
-        transform: translate(-300px, 0);  
-      }
-    } */
+     */
      /* Hide scrollbar for Chrome, Safari and Opera */
 /*   .hide_scrollbar::-webkit-scrollbar {
     display: none;
@@ -252,9 +262,7 @@
     scrollbar-width: none;  /* Firefox */
   } 
  /*  
-  .circleround {
-    clip-path: circle();
-  }
+  
   
   .PopoverContent {
     transform-origin: var(--radix-popover-content-transform-origin);

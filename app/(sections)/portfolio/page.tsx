@@ -3,24 +3,39 @@ import React, { useEffect } from 'react'
 
 import Image from 'next/image'
 
-import { useAtom, useAtomValue } from 'jotai'
-import { languageAtom, locationAtom } from '@/app/Store'
+import { useAtom, useAtomValue, useSetAtom } from 'jotai'
+import { hideSideMenuAnimationAtom, isShowingSideMenuAtom, languageAtom, locationAtom, showSideMenuAtom } from '@/app/Store'
 
 import flor from 'public/assets/images/flor1.png'
 import ciervovolante from 'public/assets/images/ciervovolante.png'
-import { useParams, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 
 export default function Page() {
   const language = useAtomValue(languageAtom)
   const pathname = usePathname()
-  const [location, setLocation] = useAtom(locationAtom)
-
+  const [isShowingSideMenu, setIsShowingSideMenu] = useAtom(isShowingSideMenuAtom)
+  const setLocation = useSetAtom(locationAtom)
+  const setShowSideMenu = useSetAtom(showSideMenuAtom)
+  const setHideSideMenuAnimation = useSetAtom(hideSideMenuAnimationAtom)
+  
   useEffect(() => {
     setLocation(pathname)
   },[])
 
-
+  const handlerSide = () => {
+    if (isShowingSideMenu == false){
+        setShowSideMenu(true)
+        setIsShowingSideMenu(true)
+    } else {
+        setHideSideMenuAnimation(true)
+        setTimeout(() => {
+            setShowSideMenu(false)
+            setIsShowingSideMenu(false)
+            setHideSideMenuAnimation(false)  
+        }, 452);
+    }
+}
   
   return (
     <div className="showOpacity1">
@@ -40,10 +55,10 @@ export default function Page() {
               {language == "EN" ? " projects " : ""}
             </p>
             <div className='flex items-center flex-col mt-4'>
-              <div /* onClick={handlerSide} */ className="flex justify-center cursos bg-violetad bg-violeta  dark:bg-violeta filtromorado w-11 h-11 tablet:w-14 tablet:h-14 items-center active:bg-violetaactive dark:active:bg-violetaactive transition-colors cursor-pointer rounded-full -translate-x-[1px]">
+              <div onClick={handlerSide} className="flex justify-center cursos bg-violetad bg-violeta  dark:bg-violeta filtromorado w-11 h-11 tablet:w-14 tablet:h-14 items-center active:bg-violetaactive dark:active:bg-violetaactive transition-colors cursor-pointer rounded-full -translate-x-[1px]">
                 <p className="text-naranjad text-naranja dark:text-naranja font-tommybold font-black text-[1.5rem] tablet:text-[2rem] svg group-hover:text-fucsia">{`{ }`}</p>
               </div>
-              <div /* onClick={handlerSide}  */ className="cursor-pointer min-w-[59px]">
+              <div onClick={handlerSide} className="cursor-pointer min-w-[59px]">
                 <p className="font-tommyregular text-[0.9rem] opacity-80 antialiased text-center tablet:text-whitem dark:text-fucsia transition-colors tracking-wider ">
                   {language == "EN" ? "projects" : "proyectos"}
                 </p>
@@ -66,9 +81,7 @@ export default function Page() {
             {language == "EN"
               ? `Welcome to my portfolio!`
               : `Bienvenidx a mi portafolio! `}
-            {language == "EN"
-              ? ` Feel free to navigate between the project sections at your left.`
-              : ``}
+
           </p>
           <Image
             src={ciervovolante}

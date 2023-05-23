@@ -1,7 +1,7 @@
 'use client'
 
 import { hideSideMenuAnimationAtom, isShowingSideMenuAtom, languageAtom, locationAtom, showSideMenuAtom } from '@/app/Store'
-import { useAtom, useAtomValue } from 'jotai'
+import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import React, { useEffect, useState } from 'react'
 import ProjectsButton from './ProjectsButton'
 import Link from 'next/link'
@@ -13,9 +13,9 @@ function ProjectTitle({name, nameES, idPreviousProject, idNextProject}:any) {
     const [atEnd, setAtEnd] = useState(false)
     const [atStart, setAtStart] = useState(true)
     const [isShowingSideMenu, setIsShowingSideMenu] = useAtom(isShowingSideMenuAtom)
-    const [showSideMenu, setShowSideMenu] = useAtom(showSideMenuAtom)
     const language = useAtomValue(languageAtom)
-    const [hideSideMenuAnimation, setHideSideMenuAnimation] = useAtom(hideSideMenuAnimationAtom)
+    const setShowSideMenu = useSetAtom(showSideMenuAtom)
+    const setHideSideMenuAnimation = useSetAtom(hideSideMenuAnimationAtom)
     const [location, setLocation] = useAtom(locationAtom)
 
     useEffect(() => {
@@ -50,7 +50,7 @@ function ProjectTitle({name, nameES, idPreviousProject, idNextProject}:any) {
               </button>
           </div> */}
           <div className="pl-2 h-[2.7rem] flex items-center">
-              <h1 key={name} className={`text-xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-tommy  transitionshort`}>{language == 'EN' ? name : nameES == undefined ? name : nameES} </h1>
+              <h1 key={name} className={`text-xl tablet:text-3xl laptop:text-4xl desktop:text-5xl font-tommy opacity-90 transitionshort`}>{language == 'EN' ? name : nameES == undefined ? name : nameES} </h1>
           </div>
           <div className='flex justify-end items-center grow gap-2 tablet:pb-0'>
               <div className="w-8 min-w-8 tablet:w-12 tablet:min-w-12 min-h-12 rounded-full">
