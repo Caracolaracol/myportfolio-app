@@ -15,6 +15,7 @@ function MenuList() {
     const [dataProjects, setDataProjects] = useState<any>([])
     const [blogEntries, setBlogEntries] = useState<any>([])
     const [isOutside, setIsOutside] = useState<boolean | null>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(true)
 
     useEffect(() => {
         const fetchProjectNames = async () => {
@@ -27,10 +28,11 @@ function MenuList() {
         }
         fetchProjectNames()
         fetchBlogEntries()
-
-        console.log(pathname, params)
+        setIsLoading(false)
     },[getProjectsDataArray,getProjects,setDataProjects,setBlogEntries, setIsOutside])
-
+    if (isLoading){
+    return <div></div>
+    } else {
     return (
         <>
             {pathname.startsWith('/portfolio') && (
@@ -162,6 +164,7 @@ function MenuList() {
           )} 
         </>
     )
+}
 }
 
 export default MenuList

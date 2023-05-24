@@ -41,13 +41,13 @@ function Header() {
 
   return (
       <div id='header' className='fixed z-10 w-[99vw] tablet:w-screen bg-[#e3e0ed] dark:bg-[#0c0913] '>
-          <header className='flex flex-row justify-between items-center border-b-[1px] border-fucsia dark:border-fucsiadark border-opacity-50 dark:border-opacity-70 mx-2 tablet:mr-6 tablet:ml-5 '>
-              <div className='ml-2 tablet:ml-12'>
+          <header className='flex flex-row justify-between  items-center border-b-[1px] border-fucsia dark:border-fucsiadark border-opacity-50 dark:border-opacity-70 mx-2 tablet:mr-6 tablet:ml-[2%] laptop:ml-[26vw] desktop:ml-[21rem]'>
+              <div className='ml-2 laptop:ml-12 z-[99] laptop:invisible'>
                   <Link href='/'>
-                      <Image src={logoCaracol} className='w-20 tablet:w-[5.5rem] drop-shadow-md showOpacityShort' alt='caracol' />
+                      <Image src={logoCaracol} className='w-20 tablet:w-[5.5rem] drop-shadow-md showOpacityShort z-[99]' alt='caracol' priority />
                   </Link>
               </div>
-              <div className="hidden tablet:mr-4 laptop:flex">
+              <div className="hidden tablet:mr-4 laptop:flex"> 
                   <NavBar />
                   <div className='items-center flex mx-4 max-h-[3rem] min-h-[3rem] border-l-[1px] dark:border-opacity-70 border-l-fucsia dark:border-l-fucsia self-center'></div>
                   <TooltipNav darkMode={darkMode} language={language} />

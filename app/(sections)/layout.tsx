@@ -58,14 +58,13 @@ function RootLayout({ children }: { children: React.ReactNode }) {
     <html lang='en'  className={`${chronoType.variable} ${tommy.variable} ${tommyLight.variable} ${tommyRegular.variable} ${tommyBold.variable} `}>
       <body>
         <Providers>
-          <div className="flex flex-col gradient_dia dark:gradient_noche select-none h-screen justify-center">
             <div className="gradient_dia dark:text-blancon dark:gradient_noche relative min-h-screen flex flex-col justify-between" >
               <div>
                 <Header />
                 <div className="pb-[7rem] tablet:pb-[5rem]" >
-                  <div className='top-0 h-20 tablet:h-[6.8rem]'>
+                  <div className='top-0 h-20 tablet:h-[5.9rem]'>
                   </div>
-                  <div className='mx-auto tablet:mx-auto laptop:ml-[27%] desktop:ml-[380px] laptop:mr-auto w-[89%] tablet:w-[82.6%] laptop:w-[67%] desktop:w-[64.7%]'>
+                  <div className='flex justify-center mx-auto laptop:pl-[25vw] desktop:pl-[20.1rem] w-[89%] tablet:w-[82.6%] laptop:w-[90%] desktop:w-[80%]'>
                     {children}
                     <SideMenu />
                   </div>
@@ -73,7 +72,6 @@ function RootLayout({ children }: { children: React.ReactNode }) {
               </div>
               <Footer />
             </div>
-          </div>
         </Providers>
       </body>
     </html>
