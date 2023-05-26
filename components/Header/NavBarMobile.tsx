@@ -1,63 +1,49 @@
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
 
 import { Menu, MenuItem } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
-/* import { useAppDispatch, useAppSelector } from '@/hooks/hooks';
-import { changeDarkMode } from '@/store/darkModeSlice';
-import { changeLanguage } from '@/store/languageSlice'; */
 
 import actia from '@/public/assets/images/actia.png'
 import cast from '@/public/assets/images/castn.png'
 import maripn from '@/public/assets/images/maripn.png'
 import marip from '@/public/assets/images/marip.png'
+import { useTheme } from 'next-themes';
+import { useAtom } from 'jotai';
+import { languageAtom } from '@/app/Store';
+import { NAV_NAMES } from '@/constants/constants';
 
 function NavBarMobile() {
+    const [mounted, setMounted] = useState(false)
     const [anchorEl, setAnchorEl] = useState(null)
     const [isActive, setIsActive ] =useState(null)
-/*     const dispatch = useAppDispatch()
-    const darkMode = useAppSelector(state => state.darkMode.value)
-    const language = useAppSelector((state) => state.language.value) */
-    const language = 'EN'
-    const darkMode = true
+    const { theme, setTheme } = useTheme()
+    const [language, setLanguage] = useAtom(languageAtom)
     const open = Boolean(anchorEl)
-    const handleClick = (event:any) => {
+
+    const themeHandler = () => {
+        theme === 'light' ? setTheme('dark') : setTheme('light')
+    }
+
+    const languageHandler = () => {
+        language === 'EN' ? setLanguage('ES') : setLanguage('EN')
+    }
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+    if (!mounted) {
+        return null
+    }
+
+
+    const handleClick = (event: any) => {
         setAnchorEl(event.currentTarget)
     }
     const handleClose = () => {
         setAnchorEl(null)
     }
 
-/*     const handler = () => {
-        if (darkMode == true) {
-            localStorage.setItem('darkmode', 'false')
-            dispatch(changeDarkMode(false))
-        } else {
-            localStorage.setItem('darkmode', 'true')
-            dispatch(changeDarkMode(true))
-        }
-    }
-    const languageHandler = () => {
-        dispatch(changeLanguage(language == 'EN' ? 'ES' : 'EN'))
-    } */
-    const navNames = [
-        {
-            name: "Portfolio",
-            nameES: "Portafolio",
-            direccion: "/portfolio"
-        },
-        {
-            name: "Blog",
-            nameES: "Blog",
-            direccion: '/blog'
-        },
-        {
-            name: "About",
-            nameES: "Sobre mi",
-            direccion: '/about'
-        },
-    ]
+
 
     return (
         <div>
@@ -82,9 +68,9 @@ function NavBarMobile() {
                         overflow: 'visible',
                         filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
                         mt: .5,
-                        ml:-2,
+                        ml: -2,
                         bgcolor: 'rgb(221,212,237)',
-                        width:'12rem'
+                        width: '12rem'
                         /* '& .MuiAvatar-root': {
                             width: 32,
                             height: 32,
@@ -109,7 +95,7 @@ function NavBarMobile() {
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
                 {
-                    navNames.map(s => (
+                    NAV_NAMES.map(s => (
 
                         <MenuItem
                             key={s.name}
@@ -122,7 +108,7 @@ function NavBarMobile() {
                             })}>
                             <Link
                                 href={s.direccion}
-                                className={ isActive == true ? 'tablet:text-xs laptop:text-lg self-center text-left font-tommy h-full w-full text-naranjal  dark:!text-azuld' : `text-lg tablet:text-lg laptop:text-xl self-center text-left font-tommyregular h-full w-full`
+                                className={isActive == true ? 'tablet:text-xs laptop:text-lg self-center text-left font-tommy h-full w-full text-naranjal  dark:!text-azuld' : `text-lg tablet:text-lg laptop:text-xl self-center text-left font-tommyregular h-full w-full`
                                 }
                             >
                                 {s.name}
@@ -132,26 +118,26 @@ function NavBarMobile() {
                 }
                 <div className='border-b-[1px] border-b-fucsia w-[80%] m-auto mb-2 mt-2'></div>
                 <MenuItem>
-                
-                <div /* onClick={handler} */ className='flex w-full flex-row cursor-pointer items-center justify-start gap-2'>
-                            <div>
-                                <p className='font-tommyregular text-lg antialiased text-center tracking-wider'>{darkMode == true ? 'Modo Día' : 'Modo Noche'}</p>
-                            </div>
-                            <Image src={maripn} alt='luciernaga' className={`w-8 h-auto ${darkMode == true ? 'hidden' : ''} cursor-pointer -rotate-[35deg] -translate-y-1`} />
-                            {/* <Image src={marip} alt='abeja' className={`w-8 h-auto ${darkMode == false ? 'hidden' : ''} cursor-pointer`} /> */}
 
+                    <div  onClick={themeHandler} className='flex w-full flex-row cursor-pointer items-center justify-start gap-2'>
+                        <div>
+                            <p className='font-tommyregular text-lg antialiased text-center tracking-wider'>{theme === 'dark' ? 'Modo Día' : 'Modo Noche'}</p>
                         </div>
-                        
+                        <Image src={maripn} alt='luciernaga' className={`w-8 h-auto ${theme === 'dark' ? 'hidden' : ''} cursor-pointer -rotate-[35deg] -translate-y-1`} />
+                        <Image src={marip} alt='abeja' className={`w-8 h-auto ${theme === 'light' ?  'hidden' : ''} cursor-pointer`} /> 
+
+                    </div>
+
                 </MenuItem>
                 <MenuItem>
-                <div /* onClick={languageHandler} */ className='flex w-full flex-row items-center cursor-pointer justify-start gap-2'>
-                            <div className=''>
-                                {/* <p className='flex font-tommyregular text-lg antialiased text-center hover:cursor-pointer hover:text-naranjad  active:bg-violetadl transition-colors active:bg-opacity-70 tracking-wider' >{language == 'ES' ? 'English' : 'Español'}</p> */}
+                    <div onClick={languageHandler} className='flex w-full flex-row items-center cursor-pointer justify-start gap-2'>
+                        <div className=''>
+                            <p className='flex font-tommyregular text-lg antialiased text-center hover:cursor-pointer hover:text-naranjad  active:bg-violetadl transition-colors active:bg-opacity-70 tracking-wider' >{language == 'ES' ? 'English' : 'Español'}</p>
 
-                            </div>
-                            {/* <Image src={cast} alt='castnia moth' className={`w-8 h-auto ${language == 'ES' ? 'hidden' : ''} cursor-pointer`} /> */}
-                            <Image src={actia} alt='actias luna' className={`w-8 h-auto ${language == 'EN' ? 'hidden' : ''} cursor-pointer mt-2`} />
                         </div>
+                        <Image src={cast} alt='castnia moth' className={`w-8 h-auto ${language == 'ES' ? 'hidden' : ''} cursor-pointer`} /> 
+                        <Image src={actia} alt='actias luna' className={`w-8 h-auto ${language == 'EN' ? 'hidden' : ''} cursor-pointer mt-2`} />
+                    </div>
                 </MenuItem>
             </Menu>
         </div>

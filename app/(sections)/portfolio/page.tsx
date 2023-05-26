@@ -21,39 +21,28 @@ export default function Page() {
   
   useEffect(() => {
     setLocation(pathname)
-  },[pathname, setLocation])
+  }, [pathname, setLocation])
 
   const handlerSide = () => {
-    if (isShowingSideMenu == false){
-        setShowSideMenu(true)
-        setIsShowingSideMenu(true)
+    if (isShowingSideMenu == false) {
+      setShowSideMenu(true)
+      setIsShowingSideMenu(true)
     } else {
-        setHideSideMenuAnimation(true)
-        setTimeout(() => {
-            setShowSideMenu(false)
-            setIsShowingSideMenu(false)
-            setHideSideMenuAnimation(false)  
-        }, 452);
+      setHideSideMenuAnimation(true)
+      setTimeout(() => {
+        setShowSideMenu(false)
+        setIsShowingSideMenu(false)
+        setHideSideMenuAnimation(false)
+      }, 452);
     }
-}
-  
+  }
+
   return (
     <div className="showOpacity1">
-      <div className="absolute flex justify-center items-center m-[5vw] top-0 right-0 bottom-0 left-0 laptop:hidden ">
-        <div className="flex items-center justify-center desktop:max-w-[50rem] pb-4 bg-violeta bg-opacity-20 p-2 rounded-md">
+      
+      <div className="absolute flex justify-center items-center m-[5vw] top-0 right-0 bottom-0 left-0 laptop:hidden "> 
+        <div className="flex items-center justify-center desktop:max-w-[50rem] pb-4 gap-[10vw]">
           <div className='flex items-center flex-col '>
-            <p className='font-tommyregular tracking-wider text-2xl tablet:text-3xl'>{language == "EN"
-              ? `Tap below to see my`
-              : `Presiona abajo para ver mis trabajos como`}
-              <strong className="font-bold">
-                {language == "EN" ? " web development" : " desarrollador web"}
-              </strong>
-              {language == "EN" ? " and " : ", y como "}
-              <strong className="font-bold">
-                {language == "EN" ? "art" : "artista."}
-              </strong>
-              {language == "EN" ? " projects " : ""}
-            </p>
             <div className='flex items-center flex-col mt-4'>
               <div onClick={handlerSide} className="flex justify-center cursos bg-violetad bg-violeta  dark:bg-violeta filtromorado w-11 h-11 tablet:w-14 tablet:h-14 items-center active:bg-violetaactive dark:active:bg-violetaactive transition-colors cursor-pointer rounded-full -translate-x-[1px]">
                 <p className="text-naranjad text-naranja dark:text-naranja font-tommybold font-black text-[1.5rem] tablet:text-[2rem] svg group-hover:text-fucsia">{`{ }`}</p>
@@ -76,15 +65,7 @@ export default function Page() {
       </div>
 
       <div className="hidden laptop:flex items-center justify-center">
-        <div className='flex items-center my-[25vh]'>
-          <p className="text-3xl font-tommyregular tracking-wider">
-            {language == "EN"
-              ? `Welcome to my portfolio!`
-              : `Bienvenidx a mi portafolio! `}
-
-          </p>
           <Darwin />
-        </div>
       </div>
     </div>
 

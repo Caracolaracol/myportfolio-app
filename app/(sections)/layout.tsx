@@ -64,7 +64,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
                 <div className="pb-[7rem] tablet:pb-[5.9rem] w-[95vw] tablet:w-[97vw]" >
                   <div className='top-0 h-20 tablet:h-[5.9rem]'>
                   </div>
-                  <div className='flex justify-center mx-auto laptop:pl-[25vw] desktop:pl-[20.1rem] w-[89%] tablet:w-[82.6%] laptop:w-[90%] desktop:w-[94%]'>
+                  <div className='flex justify-center mx-auto laptop:pl-[29vw] desktop:pl-[24rem] w-[89%] tablet:w-[82.6%] laptop:w-[90%] desktop:w-[94%] desktop:max-w-[100rem]'>
                     {children}
                     <SideMenu />
                   </div>

@@ -19,7 +19,7 @@ function TooltipNav() {
     const [language, setLanguage] = useAtom(languageAtom)
     const { theme, setTheme } = useTheme()
 
-    const handler = () => {
+    const themeHandler = () => {
         theme === 'light' ? setTheme('dark') : setTheme('light')
     }
 
@@ -28,7 +28,6 @@ function TooltipNav() {
     }
     useEffect(() => {
         setMounted(true)
-
     }, [])
     if (!mounted) {
         return null
@@ -38,7 +37,7 @@ function TooltipNav() {
             <Tooltip.Provider delayDuration={40} skipDelayDuration={80}>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild >
-                        <div onClick={handler} className='flex laptop:max-w-[4rem] laptop:min-w-[4rem] laptop:max-h-[3.6rem] laptop:min-h-[3.6rem] flex-col cursor-pointer items-center justify-center showOpacity2'>
+                        <div onClick={themeHandler} className='flex laptop:max-w-[4rem] laptop:min-w-[4rem] laptop:max-h-[3.6rem] laptop:min-h-[3.6rem] flex-col cursor-pointer items-center justify-center showOpacity2'>
                             {
                                 theme === 'dark' ? <Image src={marip} alt='abeja' className={`w-9 h-auto cursor-pointer mt-1`} /> : <Image src={maripn} alt='luciernaga' className={`w-10 h-auto cursor-pointer -rotate-[35deg] -translate-y-1`} />
                             }
