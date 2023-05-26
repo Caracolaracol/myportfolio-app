@@ -10,7 +10,7 @@ function Footer() {
    
  
     return (
-        <div className='ml-[2%] h-[4rem] tablet:h-[5rem] absolute bottom-0 w-[95%] tablet:w-[95%]'>
+        <div className='ml-[2.5%] h-[4rem] tablet:h-[5rem] absolute bottom-0 w-[95%] tablet:w-[95%]'>
             <footer className='flex h-[4rem] justify-end tablet:justify-between laptop:ml-[19rem]'>
                 <div className='h-[3rem] w-full border-t-[1px] border-fucsia dark:border-fucsiadark border-opacity-50 dark:border-opacity-70'>
                     <div className='flex font-tommyregular text-xs laptop:text-sm text-negrod tracking-wider antialiased justify-between pt-4'>

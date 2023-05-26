@@ -7,8 +7,8 @@ import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import { hideSideMenuAnimationAtom, isShowingSideMenuAtom, languageAtom, locationAtom, showSideMenuAtom } from '@/app/Store'
 
 import flor from 'public/assets/images/flor1.png'
-import ciervovolante from 'public/assets/images/ciervovolante.png'
 import { usePathname } from 'next/navigation'
+import Darwin from '@/components/Insect/Darwin'
 
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
   
   useEffect(() => {
     setLocation(pathname)
-  },[])
+  },[pathname, setLocation])
 
   const handlerSide = () => {
     if (isShowingSideMenu == false){
@@ -83,11 +83,7 @@ export default function Page() {
               : `Bienvenidx a mi portafolio! `}
 
           </p>
-          <Image
-            src={ciervovolante}
-            alt="un ciervo volante macho"
-            className="max-w-[8rem] tablet:max-w-[11rem] laptop:max-w-[13rem] desktop:max-w-[16rem] opacity-70"
-          />
+          <Darwin />
         </div>
       </div>
     </div>

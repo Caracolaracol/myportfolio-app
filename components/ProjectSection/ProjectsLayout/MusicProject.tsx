@@ -2,7 +2,7 @@ import React from 'react'
 
 function MusicProject({projectData}:any) {
   return (
-    <div>MusicProject</div>
+    <section>MusicProject</section>
   )
 }
 

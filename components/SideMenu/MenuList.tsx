@@ -29,7 +29,7 @@ function MenuList() {
         fetchProjectNames()
         fetchBlogEntries()
         setIsLoading(false)
-    },[getProjectsDataArray,getProjects,setDataProjects,setBlogEntries, setIsOutside])
+    },[setDataProjects,setBlogEntries, setIsOutside])
     if (isLoading){
     return <div></div>
     } else {
@@ -130,7 +130,7 @@ function MenuList() {
                             return (
                                 <li key={el.name}>
                                     <a
-                                        className="font-tommyregular indent-1 laptop:text-[15px] desktop:text-[17px] tracking-wide antialiased dark:text-negron laptop:dark:text-blancon dark:hover:text-naranjalink hover:text-naranjalink"
+                                        className="font-tommyregular indent-1 laptop:text-[15px] desktop:text-[17px] tracking-wide antialiased text-blancod dark:text-negron laptop:dark:text-blancon dark:hover:text-naranjalink hover:text-naranjalink"
                                         href={el.link}
                                         target="_blank"
                                     >
@@ -150,10 +150,10 @@ function MenuList() {
                 {blogEntries &&
                   blogEntries.map((element: any) => (
                     <Link
-                      href=''
+                      href={`/blog/${element.id}`}
                       key={element.id}
                     >
-                      <li key={element.id} className="font-tommyregular indent-1 laptop:text-[15px] desktop:text-[17px] tracking-wide antialiased dark:text-negron laptop:dark:text-blancon dark:hover:text-naranjalink hover:text-naranjalink">
+                      <li key={element.id} className="font-tommyregular indent-1 laptop:text-[15px] desktop:text-[17px] tracking-wide antialiased text-blancod dark:text-negron laptop:dark:text-blancon dark:hover:text-naranjalink hover:text-naranjalink">
                         -{" "}
                         {`${element.name} (${element.date[1]} ${element.date[0]})`}
                       </li>

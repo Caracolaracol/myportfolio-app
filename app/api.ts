@@ -51,3 +51,25 @@ export const getProjects = async () => {
     const { Posts } = posts
     return Posts
 }
+
+export const getEntriesData = async (params:any) => {
+    const projects: any = await getProjects()
+    const projectFound: any = projects.find((el: any) => el.id == params.slug)
+    const indexProject = await projects.indexOf(projectFound)
+    const lastArrayIndex = projects.length - 1 // LAST ARRAY INDEX
+    const previousProject = projects[indexProject - 1] // Prev Project
+    const nextProject = projects[indexProject + 1] // Next Project
+
+    return {projects, projectFound, indexProject, lastArrayIndex, previousProject, nextProject}
+
+}
+
+export const fetchPost = async (route:any) => {
+    const text = await fetch(route)
+    if (!text.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error('Failed to fetch data');
+      }
+     
+      return text.text();
+}

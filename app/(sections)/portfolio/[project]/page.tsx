@@ -16,14 +16,14 @@ export default async function Page({params}:any) {
  
   return (
     <>
-      <section>
-        <div  className=''>
+      <section className='w-[100%]'>
+        <div>
           <div key='blank-space' className="absolute top-0 left-0 h-2 w-2">
           </div>
           <ProjectTitle name={data.projectData.name} nameES={data.projectData.nameES} idPreviousProject={idPreviousProject} idNextProject={idNextProject} />
-          {
+          {  
             (data.projectType == 'fictional websites' || data.projectType == 'real websites') && <WebsiteProject projectData={data.projectData} />
-          }
+          } 
           {
             data.projectType == 'coding projects' && <CodingProject projectData={data.projectData} />
           }
@@ -40,7 +40,7 @@ export default async function Page({params}:any) {
             data.projectType == 'Fotografia Macro' && <MacroPhotography projectData={data.projectData} />
           }
         </div>
-        <div className=" mt-4 mb-4 desktop:mt-6 desktop:mb-6 w-[50%] flex mx-auto">
+        <div className=" mt-4 mb-4 desktop:mt-6 desktop:mb-6 flex mx-auto">
         </div>
       </section>
     </>

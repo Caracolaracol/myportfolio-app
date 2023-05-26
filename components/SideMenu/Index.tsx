@@ -1,8 +1,8 @@
 'use client'
 import { useEffect, useRef } from "react"
 
-import { useAtom } from "jotai"
-import { hideSideMenuAnimationAtom, isShowingSideMenuAtom, showSideMenuAtom } from "@/app/Store"
+import { useAtom, useAtomValue } from "jotai"
+import { hideSideMenuAnimationAtom, isShowingSideMenuAtom, languageAtom, showSideMenuAtom } from "@/app/Store"
 import logoCaracol from '@/public/caracolaracol.png'
 import MenuList from "./MenuList"
 import Link from "next/link"
@@ -14,6 +14,21 @@ function SideMenu() {
     const [showSideMenu, setShowSideMenu] = useAtom(showSideMenuAtom)
     const [isShowingSideMenu, setIsShowingSideMenu] = useAtom(isShowingSideMenuAtom)
     const [hideSideMenuAnimation, setHideSideMenuAnimation] = useAtom(hideSideMenuAnimationAtom)
+    const language = useAtomValue(languageAtom)
+
+    const handlerSide = () => {
+      if (isShowingSideMenu == false){
+          setShowSideMenu(true)
+          setIsShowingSideMenu(true)
+      } else {
+          setHideSideMenuAnimation(true)
+          setTimeout(() => {
+              setShowSideMenu(false)
+              setIsShowingSideMenu(false)
+              setHideSideMenuAnimation(false)  
+          }, 452);
+      }
+  }
 
     // SHOW AND HIDE SIDE MENU HANDLER
   useEffect(() => {
@@ -46,24 +61,39 @@ function SideMenu() {
   //
 
 
-    return (
-        <aside
-            ref={wrapperRef}
-            className={`${showSideMenu ? "!block showsidemenu" : ""} ${hideSideMenuAnimation ? "hidesidemenu" : ""
-                } hidden laptop:showsidemenu  overflow-y-scroll hide_scrollbar laptop:block  w-[18rem] h-fit max-h-[80vh] laptop:h-full laptop:max-h-[100vh] laptop:w-[25vw] desktop:w-[20.1rem] fixed top-[10rem] tablet:top-[12rem] laptop:top-0 desktop:top-0 left-0 z-30 dark:bg-blancomenu bg-blancod laptop:bg-violeta shadow-xl laptop:shadow-none laptop:dark:bg-negron laptop:dark:bg-opacity-70`}
-        >
-                <div className='mx-2 border-b-[1px] border-fucsia dark:border-fucsiadark border-opacity-50 dark:border-opacity-70 z-[99]'>
-                    <Link href='/'>
-                        <Image src={logoCaracol} className='w-20 tablet:w-[5.5rem] drop-shadow-md showOpacityShort z-[99]' alt='caracol' priority />
-                    </Link>
-                </div>
-            <div className="pl-[1.2rem] pt-[2.5rem] mb-4 rounded-tr-sm rounded-br-sm overflow-y-scroll hide_scrollbar">
-                <div ref={ulRef} className="flex group">
-                    
-                    <MenuList />
-                    <p className="hidden self-end text-fucsiadark opacity-90 group-hover:animate-bounce">▼</p>
-                </div>
-            </div>
+  return (
+    <aside
+      ref={wrapperRef}
+      className={`${showSideMenu ? "!block showsidemenu" : ""} ${hideSideMenuAnimation ? "hidesidemenu" : ""
+        } hidden laptop:showsidemenu  overflow-y-scroll hide_scrollbar laptop:block  w-[20rem] h-full max-h-[100vh] laptop:w-[26vw] desktop:w-[21rem] fixed top-0 left-0 z-30 dark:bg-blancomenu bg-violeta  laptop:bg-violeta shadow-xl laptop:shadow-none laptop:dark:bg-negron laptop:dark:bg-opacity-70`}
+    >
+      <div className='mx-3 border-b-[1px] border-fucsia dark:border-fucsiadark border-opacity-50 dark:border-opacity-70 z-[99] flex'>
+        <Link href='/'>
+          <Image src={logoCaracol} className='w-20 tablet:w-[5.5rem] drop-shadow-md showOpacityShort z-[99]' alt='caracol' priority />
+        </Link>
+
+       
+      </div>
+
+      <div className="pl-[1.2rem] pt-3 laptop:pt-[2.5rem] mb-4 rounded-tr-sm rounded-br-sm overflow-y-scroll hide_scrollbar">
+
+
+        <div onClick={handlerSide} className="laptop:hidden absolute top-2 flex flex-col items-center pl-[15rem] group">
+          <div className='flex justify-center cursos bg-naranja  dark:bg-violeta filtromorado w-8 h-8 tablet:w-8 tablet:h-8 items-center active:bg-violetaactive dark:active:bg-violetaactive transition-colors cursor-pointer rounded-full -translate-x-[1px]'>
+            <p className='text-naranjad text-violeta dark:text-naranja font-tommybold font-black text-lg tablet:text-lg svg group-hover:text-fucsia'>{` } `}</p>
+          </div>
+          <div className="cursor-pointer min-w-[59px]">
+            <p className='font-tommyregular text-[0.6rem] tablet:text-[0.6rem] opacity-80 antialiased text-center text-blancod dark:text-fucsia transition-colors tracking-wider '>{language == 'EN' ? 'Close' : 'cerrar'}</p>
+          </div>
+        </div>
+
+
+        <div ref={ulRef} className="flex group">
+
+          <MenuList />
+          <p className="hidden self-end text-fucsiadark opacity-90 group-hover:animate-bounce">▼</p>
+        </div>
+      </div>
         </aside>
     )
 }

@@ -55,16 +55,16 @@ const tommyBold = localFont({
 
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'  className={`${chronoType.variable} ${tommy.variable} ${tommyLight.variable} ${tommyRegular.variable} ${tommyBold.variable} `}>
+    <html lang='en' suppressHydrationWarning  className={`${chronoType.variable} ${tommy.variable} ${tommyLight.variable} ${tommyRegular.variable} ${tommyBold.variable} `}>
       <body>
         <Providers>
             <div className="gradient_dia dark:text-blancon dark:gradient_noche relative min-h-screen flex flex-col justify-between" >
               <div>
                 <Header />
-                <div className="pb-[7rem] tablet:pb-[5rem]" >
+                <div className="pb-[7rem] tablet:pb-[5.9rem] w-[95vw] tablet:w-[97vw]" >
                   <div className='top-0 h-20 tablet:h-[5.9rem]'>
                   </div>
-                  <div className='flex justify-center mx-auto laptop:pl-[25vw] desktop:pl-[20.1rem] w-[89%] tablet:w-[82.6%] laptop:w-[90%] desktop:w-[80%]'>
+                  <div className='flex justify-center mx-auto laptop:pl-[25vw] desktop:pl-[20.1rem] w-[89%] tablet:w-[82.6%] laptop:w-[90%] desktop:w-[94%]'>
                     {children}
                     <SideMenu />
                   </div>

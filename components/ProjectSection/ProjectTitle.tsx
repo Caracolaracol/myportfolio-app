@@ -9,6 +9,7 @@ import Image from 'next/image'
 import prev from 'public/assets/extraAssets/previo.png'
 import next from 'public/assets/extraAssets/proximo.png'
 
+
 function ProjectTitle({name, nameES, idPreviousProject, idNextProject}:any) {
     const [atEnd, setAtEnd] = useState(false)
     const [atStart, setAtStart] = useState(true)
@@ -17,7 +18,7 @@ function ProjectTitle({name, nameES, idPreviousProject, idNextProject}:any) {
     const setShowSideMenu = useSetAtom(showSideMenuAtom)
     const setHideSideMenuAnimation = useSetAtom(hideSideMenuAnimationAtom)
     const [location, setLocation] = useAtom(locationAtom)
-
+    
     useEffect(() => {
         setLocation('/portfolio')
         idNextProject == null ? setAtEnd(true) : setAtEnd(false)

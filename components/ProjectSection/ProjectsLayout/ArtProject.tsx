@@ -2,7 +2,7 @@ import React from 'react'
 
 function ArtProject({projectData}:any) {
   return (
-    <div>ArtProject</div>
+    <section>ArtProject</section>
   )
 }
 

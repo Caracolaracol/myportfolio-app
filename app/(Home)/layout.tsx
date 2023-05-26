@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import '../globals.css'
 import Providers from '../Providers';
 
+
 export const metadata = {
   title: 'Caracolaracol || Creative Developer',
   description: 'Portfolio of caracolaracol, web developer',
@@ -42,9 +43,9 @@ const tommyRegular = localFont({
 });
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
-
+ 
   return (
-    <html lang="en" className={`${chronoType.variable} ${tommy.variable} ${tommyLight.variable} ${tommyRegular.variable} `}>
+    <html suppressHydrationWarning lang="en" className={`${chronoType.variable} ${tommy.variable} ${tommyLight.variable} ${tommyRegular.variable} `}>
       <body>
         <Providers>
           <div className="flex flex-col gradient_dia dark:gradient_noche select-none h-screen justify-center">

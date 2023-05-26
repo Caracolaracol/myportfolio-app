@@ -1,33 +1,16 @@
-/* import { useAppSelector } from "@/hooks/hooks" */
+'use client'
 import Link from "next/link"
-import { useRouter } from "next/router"
-import { useEffect } from "react"
+import { usePathname } from "next/navigation"
+import { languageAtom } from "@/app/Store"
+import { useAtomValue } from "jotai"
+
+import { NAV_NAMES } from "@/constants/constants"
 
 
 function NavBar() {
-   /*  const router = useRouter() */
-/*     const language = useAppSelector(state => state.language.value)
-    const location = useAppSelector(state => state.data.locationSection)
- */
-    const language = 'EN'
-    const location = '/portfolio'
-    const navNames = [
-        {
-            name: "portfolio",
-            nameES: "portafolio",
-            direccion: "/portfolio"
-        },
-        {
-            name: "blog",
-            nameES: "blog",
-            direccion: '/blog'
-        },
-        {
-            name: "about",
-            nameES: "sobre mi",
-            direccion: '/about'
-        },
-    ]
+    const pathname = usePathname()
+    const language = useAtomValue(languageAtom)
+    
     const styles = 'tablet:text-xs laptop:text-lg self-center text-center font-tommyregular hover:text-naranjalink'
     
     return (
@@ -35,18 +18,23 @@ function NavBar() {
            
             <ul className='flex flex-row justify-evenly'>
                 {
-                    navNames.map(s => (
-                        <li key={s.name} className='laptop:max-w-[4.8rem] laptop:min-w-[4.8rem] text-center showOpacity1'>
+                    NAV_NAMES.map(s => {
+                        const isActive = pathname.startsWith(s.direccion);
+
+                        return(
+
+                            <li key={s.name} className='laptop:max-w-[4.8rem] laptop:min-w-[4.8rem] text-center showOpacity1'>
                             <Link
                                 
                                 href={s.direccion}
-                                className={ `${styles} ${location == s.direccion ? 'text-fucsiadark dark:!text-fucsia' : ''} `
-                                } 
+                                className={ `${styles} ${isActive ? 'text-fucsiadark dark:!text-fucsia' : ''} `
+                            } 
                             >
                                 {language == 'EN' ? s.name : s.nameES}
                             </Link>
                         </li>
-                    ))
+                        )
+                        })
                 }  
             </ul>
         </nav>

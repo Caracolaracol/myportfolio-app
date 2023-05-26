@@ -24,7 +24,7 @@ const styles = 'font-tommyregular text-[1.2rem] text-naranjalink hover:text-nara
                                                     <Tooltip.Trigger asChild >
                                                         <Image
                                                             key={s.idtech}
-                                                            src={s.img}
+                                                            src={`/assets${s.img}`}
                                                             width='40'
                                                             height='40'
                                                             rel="noreferrer noopener"
@@ -55,7 +55,7 @@ const styles = 'font-tommyregular text-[1.2rem] text-naranjalink hover:text-nara
                                                     <Popover.Trigger asChild >
                                                         <Image
                                                             key={s.idtech}
-                                                            src={s.img}
+                                                            src={`/assets${s.img}`}
                                                             width='40'
                                                             height='40'
                                                             rel="noreferrer noopener"
