@@ -11,9 +11,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
-  body {
-    @apply dark:text-blancon text-negrod;
-  }
+
   * {
     outline-style:none !important;
     box-sizing: border-box;
@@ -45,14 +43,24 @@
   /* ------------------- */
   /* ---- GRADIENTS --- */
   /* ------------------- */
-  .gradient_noche {
+/*   .gradient_noche {
 
-    background: linear-gradient(180deg, #0c0913 0%, rgb(12, 9, 21) 80%, rgb(13, 1, 39) 100%);
-  }
-
+      background: linear-gradient(180deg, #0c0913 0%, rgb(12, 9, 21) 80%, rgb(13, 1, 39) 100%);
+     background: linear-gradient(180deg, #0c0913 0%, rgb(12, 9, 21) 80%, rgb(13, 1, 39) 100%);
+} */
+/* 
   .gradient_dia {
-    background: linear-gradient(180deg, #e5e3ed 0%, #d7d2eb 80%, #b59fe7 100%);
-  }
+
+
+ background: linear-gradient(180deg, #e5e3ed 0%, #d7d2eb 80%, #b59fe7 100%); */
+}
+
+.background_noise {
+  background-image: url('../public/assets/extraAssets/nnnoise.svg'); 
+}
+.background_noise_dark {
+  background-image: url('../public/assets/extraAssets/nnnoisedark.svg');
+}
   .loader_icon {
     animation: spin 2s linear infinite;
   }
@@ -235,7 +243,7 @@
   .circleround {
     clip-path: circle();
   }
-}
+
 
 .swiper {
   margin-left: auto;

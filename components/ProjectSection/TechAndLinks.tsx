@@ -8,7 +8,7 @@ import { languageAtom } from '@/app/Store';
 function TechAndLinks({ tech, github, link, isCoding}:any) {
     const lang = useAtomValue(languageAtom)
 
-const styles = 'font-tommyregular text-[1.2rem] text-naranjalink hover:text-naranja dark:text-naranjalink dark:hover:text-naranja'
+const styles = 'font-tommyregular text-[1.2rem] text-ocre hover:text-timberwolf dark:text-ocre dark:hover:text-timberwolf'
     return (
         <div className="tablet:flex tablet:justify-between desktop:px-[2vw]">
                         <div>

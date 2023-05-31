@@ -37,9 +37,9 @@ function VideoProject({projectData}:any) {
 }, [projectData])
   return (
     <>
-    <div className="border-[2px] border-spacing-2 border-verde dark:border-blancod  border-opacity-40 dark:border-opacity-10 tablet:max-w-[96%] tablet:m-auto">
+    <div className="border-[2px] border-spacing-2 border-timberwolf dark:border-timberwolf  border-opacity-40 dark:border-opacity-10 tablet:max-w-[96%] tablet:m-auto">
         <div>
-            <div key={projectData.name} className='bg-blancod dark:bg-negron'>
+            <div key={projectData.name} className='bg-snow dark:bg-richblack'>
                 {projectData && <Video videolink={projectData.video} />}
             </div>
         </div>

@@ -44,7 +44,7 @@ function ParticlesTS() {
                     },
 
                     particles: {
-                        color: { value: "#CC496C" },
+                        color: { value: "#CD7527" },
                         move: {
                             direction: "none",
                             enable: true,

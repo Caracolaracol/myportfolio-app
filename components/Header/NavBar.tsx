@@ -11,7 +11,7 @@ function NavBar() {
     const pathname = usePathname()
     const language = useAtomValue(languageAtom)
     
-    const styles = 'tablet:text-xs laptop:text-lg self-center text-center font-tommyregular hover:text-naranjalink'
+    const styles = 'tablet:text-xs laptop:text-lg desktop:text-xl self-center text-center font-tommyregular hover:text-darkpurple dark:hover:text-timberwolf'
     
     return (
         <nav className='laptop:max-w-[15rem] laptop:min-w-[15rem] flex items-center'>
@@ -27,7 +27,7 @@ function NavBar() {
                             <Link
                                 
                                 href={s.direccion}
-                                className={ `${styles} ${isActive ? 'text-fucsiadark dark:!text-fucsia' : ''} `
+                                className={ `${styles} ${isActive ? '!text-ocre dark:!text-ocre' : ''} `
                             } 
                             >
                                 {language == 'EN' ? s.name : s.nameES}

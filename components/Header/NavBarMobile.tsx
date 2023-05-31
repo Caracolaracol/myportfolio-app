@@ -108,7 +108,7 @@ function NavBarMobile() {
                             })}>
                             <Link
                                 href={s.direccion}
-                                className={isActive == true ? 'tablet:text-xs laptop:text-lg self-center text-left font-tommy h-full w-full text-naranjal  dark:!text-azuld' : `text-lg tablet:text-lg laptop:text-xl self-center text-left font-tommyregular h-full w-full`
+                                className={isActive == true ? 'tablet:text-xs laptop:text-lg self-center text-left font-tommy h-full w-full text-ocre  dark:!text-ocre' : `text-lg tablet:text-lg laptop:text-xl self-center text-left font-tommyregular h-full w-full`
                                 }
                             >
                                 {s.name}

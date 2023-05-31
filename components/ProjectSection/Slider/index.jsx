@@ -22,7 +22,7 @@ function Sliders({ images, data, imagesm}) {
                 spaceBetween={20}
                 zoom={true}
                 modules={[Autoplay,Pagination, Zoom]}
-                className="dark:bg-negron !hidden tablet:!block"
+                className="dark:bg-richblack !hidden tablet:!block"
             >
                 {
                     data != undefined ? (images.map((s) => <SwiperSlide data-hash={(s)} key={s} zoom='true'><Image src={`/assets${s}`} width="1280" height="720" alt='swipeimage' className="transitionshort"/></SwiperSlide>)) : null
@@ -34,7 +34,7 @@ function Sliders({ images, data, imagesm}) {
                 }}
                 zoom={true}
                 modules={[Pagination, Autoplay, Zoom]}
-                className="dark:bg-negron tablet:!hidden"
+                className="dark:bg-richblack tablet:!hidden"
             >
                 {
                     data != undefined ? (imagesm.map((s) => <SwiperSlide data-hash={(s)} key={s} zoom='true'><Image src={`/assets${s}`} width="1024" height="1280" alt='swipeimage' className="transitionshort" /></SwiperSlide>)) : null

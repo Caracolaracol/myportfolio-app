@@ -46,7 +46,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
  
   return (
     <html suppressHydrationWarning lang="en" className={`${chronoType.variable} ${tommy.variable} ${tommyLight.variable} ${tommyRegular.variable} `}>
-      <body>
+      <body className='dark:background_noise_dark dark:text-snow text-black dark:bg-dark bg-snow '>
         <Providers>
           <div className="flex flex-col gradient_dia dark:gradient_noche select-none h-screen justify-center">
               {children}

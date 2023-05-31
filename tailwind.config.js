@@ -18,10 +18,36 @@ module.exports = {
       },
     },
     colors: {
+      // NEW PALETTE
+
+      // Main Pallete
+      richblack:"#0C0A15",
+      black:"#1f1d28",
+      dark:"#1c1b22",
+      darkpurple:'#332230',
+      violet:'#312559',
+      cerise: '#D94A6D',
+      ocre: '#DE7F26',
+      snow:"#F4EFF1",
+      timberwolf:'#c0a8a2',
+      
+      // Action Colors
+      violetlight:'#483681',
+      ocrelight:'#935e30',
+
+/*       // --- OLD PALLETTE ----
+
+      
+      violet:'#312559',
+      darkpurple:'#332230',
+      ocre: '#CD7527',
+      cerise: '#CC496C',
+      timberwolf:'#c0a8a2',
+      lavenderblush:'#EFE1E5',
       // Paleta principal
       naranja: '#CD7527',
-      violeta: '#312559',
-      fucsia: '#CC496C',
+
+      
       blancon: '#BAB3B3',
       verde: '#22402C',
       
@@ -49,7 +75,7 @@ module.exports = {
       violetadl: '#453382',
       verdedl: '#336845',
       azuldl: '#268DCD',
-      fucsiadl: '#CE5E7C',
+      fucsiadl: '#CE5E7C', */
     },
     screens: {
 

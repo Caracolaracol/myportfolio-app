@@ -41,7 +41,7 @@ function ProjectTitle({name, nameES, idPreviousProject, idNextProject}:any) {
 
 
   return (
-      <div className="flex justify-between items-center  border-b-[1px] border-spacing-2 border-negrod dark:border-b-blancon !border-opacity-30 pb-3 mb-6">
+      <div className="flex justify-between items-center  border-b-[1px] border-spacing-2 border-timberwolf dark:border-b-timberwolf !border-opacity-30 pb-3 mb-6">
           <ProjectsButton handlerSide={handlerSide} language={language}/>
 
           {/* <div onClick={sideMenuHandler} className="laptop:hidden shrink  w-9 min-w-9 tablet:w-9 tablet:min-w-9 min-h-9 bg-violeta dark:bg-violeta dark:hover:bg-violetadl active:bg-violetaactive dark:active:bg-violetaactive circleround group transition-colors">
@@ -57,7 +57,7 @@ function ProjectTitle({name, nameES, idPreviousProject, idNextProject}:any) {
               <div className="w-8 min-w-8 tablet:w-12 tablet:min-w-12 min-h-12 rounded-full">
                   {atStart ? null : <Link href={`${location}/${idPreviousProject ? idPreviousProject : null}`}>
                       <button key={name}
-                          className={`p-1  font-tommyregular  tablet:text-xl bg-violetad circleround bg-violeta dark:bg-violeta dark:hover:bg-violetadl dark:hover:text-fucsia dark:text-blancol  hover:bg-violetadl hover:text-texth active:bg-violetaactive dark:active:bg-violetaactive`}>
+                          className={`p-1  font-tommyregular  tablet:text-xl bg-violet circleround dark:bg-violet `}>
                           <Image src={prev} alt='anterior proyecto' width={30} height={45} className={`p-1 dark:active:brightness-50  `} />
                       </button>
                   </Link>
@@ -67,7 +67,7 @@ function ProjectTitle({name, nameES, idPreviousProject, idNextProject}:any) {
               <div className="w-8 min-w-8 tablet:w-12 tablet:min-w-12 min-h-12 rounded-full">
                   {atEnd ? null : <Link href={`${location}/${idNextProject}`} >
                       <button key={name}
-                          className=' p-1  font-tommyregular tablet:text-xl circleround bg-violeta dark:bg-violeta dark:hover:bg-violetadl dark:hover:text-fucsia dark:text-blancol  hover:bg-violetadl hover:text-texth active:bg-violetaactive dark:active:bg-violetaactive'>
+                          className=' p-1  font-tommyregular tablet:text-xl circleround bg-violet dark:bg-violet  '>
                           <Image src={next} alt='siguiente' width={30} height={45} className={`p-1 dark:active:brightness-50 `} />
                       </button>
                   </Link>}

@@ -33,9 +33,9 @@ function WebsiteProject({projectData}:any) {
 
   return (
     <>
-    <div className="border-[2px] border-spacing-2 border-verde dark:border-blancod  border-opacity-40 dark:border-opacity-10 tablet:max-w-[96%] tablet:m-auto">
+    <div className="border-[2px] border-spacing-2 border-timberwolf dark:border-timberwolf  border-opacity-40 dark:border-opacity-10 tablet:max-w-[96%] tablet:m-auto">
         <div className='relative pb-[125%] tablet:pb-[56.25%]'>
-            <div key={projectData.name} className='bg-blancod dark:bg-negron absolute top-0 left-0 w-full h-full '>
+            <div key={projectData.name} className='bg-richblack dark:bg-richblack absolute top-0 left-0 w-full h-full '>
                 <Sliders images={projectData.images} imagesm={projectData.imagesmobile} data={projectData.images} />
             </div>
         </div>

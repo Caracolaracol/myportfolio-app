@@ -37,14 +37,14 @@ function Page() {
                                 />
                         </div>
                     </header>
-                    <main className="flex flex-col justify-evenly flex-nowrap text-center px-2 dark:text-blancon z-50">
+                    <main className="flex flex-col justify-evenly flex-nowrap text-center px-2  z-50">
                         <h1 className="overflow-hidden text-[2.4rem] font-tommy cursor-default tablet:tracking-wide tablet:text-5xl laptop:text-6xl desktop:text-7xl laptop:tracking-normal">
                             Caracolaracol{" "}
-                            <span className="text-naranja font-tommy font-bold text-4xl tablet:text-4xl laptop:text-6xl desktop:text-7xl">{`//`}</span>{" "}
+                            <span className="text-ocre font-tommy font-bold text-4xl tablet:text-4xl laptop:text-6xl desktop:text-7xl">{`//`}</span>{" "}
                             Creative Developer
                         </h1>
-                        <p className="text-sm text-negrod font-tommy tablet:text-lg desktop:text-xl tablet:pt-2 tablet:tracking-wider dark:text-blancon">
-                            <span className="text-fucsia tablet:text-lg desktop:text-xl tablet:tracking-wide font-tommy">
+                        <p className="text-sm font-tommy tablet:text-lg desktop:text-xl tablet:pt-2 tablet:tracking-wider dark:text-lavenderblush">
+                            <span className="text-cerise tablet:text-lg desktop:text-xl tablet:tracking-wide font-tommy">
                                 #{" "}
                             </span>
                             {language == "EN"
@@ -60,12 +60,12 @@ function Page() {
 
                     <nav className="flex justify-center py-2 tablet:py-3 z-50">
                         <Link href="/portfolio">
-                            <button className="flex items-center justify-center gap-2 font-tommy transition-colors bg-violeta text-blancod hover:bg-violetadl hover:text-fucsia dark:bg-violeta dark:hover:bg-violetadl dark:hover:text-fucsia dark:text-blancon rounded-lg text-2xl h-10 w-fit px-6 py-6 tablet:py-0 tablet:h-14 tablet:px-4 desktop:px-7 desktop:py-8 tablet:text-4xl desktop:text-4xl tablet:tracking-wider min-w-[14.5rem]  tablet:min-w-[20rem] laptop:min-w-[22rem] group">
-                                <p className="text-fucsia group-hover:text-blancon transition-colors">
+                            <button className="flex items-center justify-center gap-2 font-tommy transition-colors bg-violet text-snow hover:text-cerise dark:bg-violet  dark:hover:text-cerise dark:text-blancon rounded-lg text-2xl h-10 w-fit px-6 py-6 tablet:py-0 tablet:h-14 tablet:px-4 desktop:px-7 desktop:py-8 tablet:text-4xl desktop:text-4xl tablet:tracking-wider min-w-[14.5rem]  tablet:min-w-[20rem] laptop:min-w-[22rem] group">
+                                <p className="text-cerise group-hover:text-snow transition-colors">
                                     {"{"}
                                 </p>
                                 {language == "EN" ? ` My Portfolio ` : `Mi portafolio`}
-                                <p className="text-fucsia group-hover:text-blancon transition-colors">
+                                <p className="text-cerise group-hover:text-snow transition-colors">
                                     {"}"}
                                 </p>
                             </button>

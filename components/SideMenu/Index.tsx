@@ -65,9 +65,9 @@ function SideMenu() {
     <aside
       ref={wrapperRef}
       className={`${showSideMenu ? "!block showsidemenu" : ""} ${hideSideMenuAnimation ? "hidesidemenu" : ""
-        } hidden laptop:showsidemenu  overflow-y-scroll hide_scrollbar laptop:block  w-[20rem] h-full max-h-[100vh] laptop:w-[26vw] desktop:w-[21rem] fixed top-0 left-0 z-30 dark:bg-blancomenu bg-violeta  laptop:bg-violeta shadow-xl laptop:shadow-none laptop:dark:bg-negron laptop:dark:bg-opacity-70`}
+        } hidden laptop:showsidemenu  overflow-y-scroll hide_scrollbar laptop:block  w-[20rem] h-full max-h-[100vh] laptop:w-[26vw] desktop:w-[21rem] fixed top-0 left-0 z-30 dark:bg-richblack bg-black text-snow shadow-xl laptop:shadow-none laptop:dark:bg-negron laptop:dark:bg-opacity-70`}
     >
-      <div className='mx-3 border-b-[1px] border-fucsia dark:border-fucsiadark border-opacity-50 dark:border-opacity-70 z-[99] flex'>
+      <div className='mx-3 border-b-[1px] border-timberwolf dark:border-timberwolf border-opacity-50 dark:border-opacity-70 z-[99] flex'>
         <Link href='/'>
           <Image src={logoCaracol} className='w-20 tablet:w-[5.5rem] drop-shadow-md showOpacityShort z-[99]' alt='caracol' priority />
         </Link>
